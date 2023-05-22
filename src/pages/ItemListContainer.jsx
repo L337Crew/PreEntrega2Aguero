@@ -9,11 +9,15 @@ const ItemListContainer = () => {
    
   return (
     <>
-        <div className='d-flex align-items-center justify-content-around mt-5'>
-            {productos.map((producto)=>(
-                <Item key={producto.id} {...producto}/>
-            ))}
-        </div>
+    <div className="container">
+      <div className="row">
+        {productos.map((producto) => (
+          <div key={producto.id} className="col-lg-3 p-2">
+            <Item {...producto} />
+          </div>
+        ))}
+      </div>
+    </div>
     </>
     
     

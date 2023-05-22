@@ -4,7 +4,7 @@ import Componentes from '../pages/Componentes.jsx'
 import ItemListContainer from '../pages/ItemListContainer'
 import Perifericos from '../pages/Perifericos'
 import Navbar from '../components/Navbar'
-import ItemDetailContainer from '../pages/ItenDetailContainer.jsx'
+import ItemDetailContainer from '../pages/ItemDetailContainer.jsx'
 
 const Rutas = () => {
     const navbar_items = [

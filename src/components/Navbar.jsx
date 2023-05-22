@@ -8,7 +8,9 @@ const Navbar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme= "dark">
     <div className="container-fluid ">
-    <Link className="navbar-brand fs-2 text-warning" to="/">Uz</Link>
+    <Link to='/'>
+       <img src='/logouz.png' width='125' alt="logo uz"  />
+    </Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
