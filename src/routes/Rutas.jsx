@@ -10,11 +10,11 @@ const Rutas = () => {
     const navbar_items = [
        
         {
-            path: "/Componentes",
+            path: "componentes",
             name: "Componentes"
         },
         {
-            path: "/Perifericos",
+            path: "perifericos",
             name: "Perifericos"
         } 
     ]

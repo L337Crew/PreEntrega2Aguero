@@ -9,6 +9,9 @@
         name: "Perifericos"
     }
 }
+const categorias2 = [
+    "componente","perifericos"
+]
 
 export const productos = [
     {
@@ -16,7 +19,7 @@ export const productos = [
         titulo: 'ryzen5600x',
         descripcion: 'Procesador de gama media',
         imagen: 'https://i.imgur.com/IsiY53k.jpg',
-        categoria: CATEGORIAS.componentes,
+        categoria: "componentes", 
         precio: 123
 
     },
@@ -25,7 +28,7 @@ export const productos = [
         titulo: 'ryzen9',
         descripcion: 'Procesador de gama alta',
         imagen:'https://i.imgur.com/ccA2jFp.jpg',
-        categoria: CATEGORIAS.componentes,
+        categoria: "componentes",
         precio: 321
     },
     {
@@ -33,7 +36,7 @@ export const productos = [
         titulo: '3070ti',
         descripcion: 'Procesador de gama media',
         imagen:'https://i.imgur.com/5N0tRDM.jpg',
-        categoria: CATEGORIAS.perifericos,
+        categoria: "perifericos",
         precio: 421
     },
     {
@@ -41,7 +44,7 @@ export const productos = [
         titulo:'i710700',
         descripcion: 'Procesador de gama alta',
         imagen:'https://i.imgur.com/U3CPXJC.jpg',
-        categoria: CATEGORIAS.perifericos,
+        categoria: "perifericos",
         precio: 322
     }
 ]

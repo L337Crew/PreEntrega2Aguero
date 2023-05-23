@@ -19,7 +19,7 @@ const Navbar = (props) => {
           {
             navbar_items.map(({path, name}, index) => (
               <li key={index} className="nav-item">
-                <NavLink className={'nav-link fs-3 text-light'} to={path}>{name}</NavLink>
+                <NavLink className={'nav-link fs-3 text-light'} to={`category/${path}`}>{name}</NavLink>
               </li>
             ))
           }
