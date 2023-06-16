@@ -1,19 +1,16 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
 
-const ItemDetail = (props) => {
-  const { nombre, descripcion, imagen, categoria, precio } = props;
+const ItemDetail = ({item}) => {
+  
   return (
     <div className="card container-fluid" style={{ width: '18rem' }}>
-      <img src={imagen} className="card-img-top" alt={nombre} />
+      <img src={item.imagen} className="card-img-top" alt={item.nombre} />
       <div className="card-body">
-        <h5 className="card-title text-primary">{nombre}</h5>
-        <p className="card-text">{descripcion}</p>
-        <Link to={`/categoria/${categoria.id}`}>
-          {categoria.name}
-        </Link>
-        <p>Precio: ${precio}</p>
+        <h5 className="card-title text-primary">{item.nombre}</h5>
+        <p className="card-text">{item.descripcion}</p>
+        <p>{item.categoria}</p>
+        <p className='text-success fs-5'>Precio: ${item.precio}</p>
       </div>
     </div>
   );

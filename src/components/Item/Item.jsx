@@ -1,32 +1,37 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const Item = (props) => {
-  const { nombre, descripcion, imagen, categoria, id } = props;
+const Item = ({nombre, imagen, descripcion, precio, marca, categoria, id}) => {
+  
   const navigate = useNavigate();
 
   const handleVerMasClick = () => {
-    navigate(`item/${id}`);
+    navigate(`/itemDetail/${id}`);
+    console.log(id)
   };
 
   return (
-    <div className="card container-fluid my-5" style={{ width: '18rem' }}>
-      <img src={imagen} className="card-img-top" alt={nombre} />
-      <div className="card-body ">
+    <div className="card container-fluid" style={{ width: '18rem', height: '100%' }}>
+      <img
+        src={imagen}
+        className="card-img-top"
+        alt={nombre}
+        style={{ objectFit: 'contain', height: '200px', maxHeight: '100%' }}
+      />
+      <div className="card-body d-flex flex-column">
         <h5 className="card-title text-danger">{nombre}</h5>
         <p className="card-text">{descripcion}</p>
-        <div className='pb-1'>
-          <Link to={`${categoria.id}`} style={{ textDecoration: 'none', color: 'secondary' }}>
-            {categoria.name}
-          </Link>
-        </div>
-        <button type="button" className="btn btn-secondary" onClick={handleVerMasClick}>
+        <p>{marca}</p>
+        <p>{categoria}</p>
+        <button type="button" className="btn btn-secondary mt-auto" onClick={handleVerMasClick}>
           Ver más
         </button>
       </div>
-   </div>
+    </div>
   );
 };
 
 export default Item;
+
+

@@ -1,8 +1,6 @@
 import React from 'react'
 import {BrowserRouter,Routes, Route} from 'react-router-dom'
-import Componentes from '../pages/Componentes.jsx'
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer.jsx'
-import Perifericos from '../pages/Perifericos'
 import Navbar from '../components/Navbar/Navbar.jsx'
 import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer.jsx'
 import { Home } from '../pages/Home.jsx'
@@ -26,10 +24,8 @@ const Rutas = () => {
       <Navbar navbar_items= {navbar_items}/>
       <Routes>
          <Route path='/' element={<Home/>}/>
-         <Route path='/componentes' element={<Componentes/>}/>
-         <Route path='/perifericos' element={<Perifericos/>}/>
          <Route path='/category/:id' element={<ItemListContainer/>} />
-         <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+         <Route path='/itemDetail/:id' element={<ItemDetailContainer/>}/>
          <Route path='/Cart' element={<Cart/>}/>
       </Routes>
       <Footer/>
