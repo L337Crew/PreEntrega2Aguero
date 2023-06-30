@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from '../../Context/CartContext';
-import { verSiExisteEnCarrito } from '../../Helpers/Helpers';
+
 
 const ItemCount = ({ item }) => {
-  const { carrito, agregarAlCarrito } = useCart();
+  const { carrito, agregarAlCarrito, verSiExisteEnCarrito } = useCart();
   const [cantidad, setCantidad] = useState(1);
 
   let producto = item && {
