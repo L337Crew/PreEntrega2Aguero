@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Item from '../Item/Item';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { db } from '../../firebase.config';
+import { db } from '../../Services/firebase.config';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
@@ -35,7 +35,7 @@ const ItemListContainer = () => {
         <div className="container">
           <div className="row">
             {datos.map((producto) => (
-              <div key={producto.id} className="col-lg-3 p-2 mt-1 mb-5">
+              <div key={producto.id} className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2 mt-1 mb-5">
                 <Item {...producto} />
               </div>
             ))}

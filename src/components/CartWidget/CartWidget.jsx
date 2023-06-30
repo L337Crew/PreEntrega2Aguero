@@ -1,26 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useCart } from '../../Context/CartContext';
 
 const Cartwidget = () => {
-  const [items, setItems] = useState([
-    {
-      id: "1",
-      nombre: "Ryzen5600x",
-      descripcion: "Procesador de gama media",
-      imagen: "https://i.imgur.com/IsiY53k.jpg",
-      categoria: "componentes",
-      precio: "155000",
-      marca: "Amd",
-    },
-  ]);
+  const { carrito } = useCart();
+
   return (
-    <div className="cart-widget">
+    <div className="cart-widget pe-3">
       <Link to="/Cart">
-      <FaShoppingCart size={"25"} color={"white"} />
-      <span className="cart-notification fs-4" style={{ color: "white" }}>
-        {items.length}
-      </span>
+        <FaShoppingCart size={"25"} color={"white"} />
+        <span className="cart-notification fs-5 text-decoration-none" style={{ color: "white" }}>
+          {carrito.length}
+        </span>
       </Link>
     </div>
   );

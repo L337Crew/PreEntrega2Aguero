@@ -8,11 +8,11 @@ const Item = ({nombre, imagen, descripcion, precio, marca, categoria, id}) => {
 
   const handleVerMasClick = () => {
     navigate(`/itemDetail/${id}`);
-    console.log(id)
+    
   };
 
   return (
-    <div className="card container-fluid" style={{ width: '18rem', height: '100%' }}>
+    <div className="card container " style={{ width: 'auto', height: '100%' }}>
       <img
         src={imagen}
         className="card-img-top"
@@ -25,7 +25,7 @@ const Item = ({nombre, imagen, descripcion, precio, marca, categoria, id}) => {
         <p>{marca}</p>
         <p>{categoria}</p>
         <button type="button" className="btn btn-secondary mt-auto" onClick={handleVerMasClick}>
-          Ver más
+          Ver mas
         </button>
       </div>
     </div>
