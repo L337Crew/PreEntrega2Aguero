@@ -11,7 +11,7 @@ const Cart = () => {
       <div>
         <h4 className='bg-dark text-light fs-1'>Carrito de compras</h4>
         {carrito.length === 0 ? (
-          <p>No hay productos en el carrito</p>
+          <p className='fs-1'>No hay productos en el carrito</p>
         ) : (
           <div className="container" style={{ height: '620px', display: 'flex', flexDirection: 'column' }}>
             <div className="row" style={{ flex: 1 }}>

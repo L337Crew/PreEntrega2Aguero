@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../../Services/firebase.config';
-import { useCart } from '../../Context/CartContext'
+import { useCart } from '../../Context/CartContext';
+import swal from 'sweetalert2';
 
-const Formulario = ({ total, compras }) => {
+const Formulario = ({ total, compra }) => { // Cambio en el nombre de la prop
+
   const { vaciarCarrito } = useCart();
 
   const [buyer, setBuyer] = useState({
@@ -25,7 +27,7 @@ const Formulario = ({ total, compras }) => {
       buyer.email.trim() === "" ||
       buyer.telefono.trim() === ""
     ) {
-      alert("Por favor, completa todos los campos del formulario.");
+      swal.fire("Error", "Por favor, completa todos los campos del formulario.", "error");
       return;
     }
 
@@ -39,18 +41,18 @@ const Formulario = ({ total, compras }) => {
       const docRef = await addDoc(collection(db, "compras"), compra);
       console.log("ID de compra generado:", docRef.id);
 
-      alert("La compra se realizó con éxito. ID de compra: " + docRef.id);
+      swal.fire("¡Compra realizada!", "La compra se realizó con éxito. ID de compra: " + docRef.id, "success");
 
       vaciarCarrito();
     } catch (error) {
       console.log("Error al generar la compra:", error);
-      alert("Ocurrió un error al realizar la compra. Por favor, inténtalo nuevamente.");
+      swal.fire("Error", "Ocurrió un error al realizar la compra. Por favor, inténtalo nuevamente.", "error");
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    generarCompra({ buyer, items: compras, total });
+    generarCompra({ buyer, items: compra, total }); // Cambio en el nombre de la prop
   };
 
   return (
@@ -108,5 +110,4 @@ const Formulario = ({ total, compras }) => {
 };
 
 export default Formulario;
-
 
